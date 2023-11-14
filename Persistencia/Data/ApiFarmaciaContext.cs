@@ -34,7 +34,10 @@ public class ApiFarmaciaContext : DbContext
     public DbSet<TipoContacto> TiposContactos { get; set; }
     public DbSet<TipoDocumento> TiposDocumentos { get; set; }
     public DbSet<TipoMovInventario> TiposMovInventarios { get; set; }
-    public DbSet<UbicacionPersona> UbicacionesPersonas { get; set; }
+    public DbSet<UbicacionPersona> UbicacionesPersonas { get; set; }    
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserRol> UsersRoles { get; set; }
+    public DbSet<Rol> Roles { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
