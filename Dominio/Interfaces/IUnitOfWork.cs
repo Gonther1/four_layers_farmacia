@@ -20,11 +20,13 @@ public interface IUnitOfWork
     IPersonaRepository Personas { get; }
     IPresentacionRepository Presentaciones { get; }
     IProductoRepository Productos { get; }
-    IRoPersonaRepository Roles { get; }
+    IRoPersonaRepository RolesPersonas { get; }
     ITipoContactoRepository TiposContactos { get; }
     ITipoDocumentoRepository TiposDocumentos { get; }
     ITipoMovInventarioRepository TiposMovInventarios { get; }
     ITipoPersonaRepository TiposPersonas { get; }
     IUbicacionPersonaRepository UbicacionesPersonas { get; }
+    IRolRepository Roles { get; }
+    IUserRepository Users { get; }
     Task<int> SaveAsync();
 }

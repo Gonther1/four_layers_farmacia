@@ -32,6 +32,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private TipoMovInventarioRepository _tipomovinventario;
     private TipoPersonaRepository _tipospersonas;
     private UbicacionPersonaRepository _ubicacionespersonas;
+    private UserRepository _users;
+    private RolRepository _roles;
     public ICiudadRepository Ciudades
     {
         get 
@@ -176,7 +178,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _productos;
         }
     }
-    public IRoPersonaRepository Roles
+    public IRoPersonaRepository RolesPersonas
     {
         get 
         {
@@ -243,6 +245,28 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _ubicacionespersonas;
         }
     } 
+    public IUserRepository Users
+    {
+        get 
+        {
+            if (_users == null)
+            {
+                _users = new UserRepository(_context);
+            }
+            return _users;
+        }
+    }
+    public IRolRepository Roles
+    {
+        get 
+        {
+            if (_roles == null)
+            {
+                _roles = new RolRepository(_context);
+            }
+            return _roles;
+        }
+    }
 
     public UnitOfWork(ApiFarmaciaContext context)
     {
